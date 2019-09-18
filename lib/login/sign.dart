@@ -1,10 +1,14 @@
+import 'package:app_manage/Controller/signupStateFull.dart';
 import 'package:app_manage/view/SignUpApp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:app_manage/Controller/signinStateFull.dart';
-import 'package:app_manage/view/MainAppCustom.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class SignIn extends State<SignInStateFull> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     var sizeWidth = MediaQuery.of(context).size.width;
@@ -29,22 +33,25 @@ class SignIn extends State<SignInStateFull> {
             ),
             new Container(
               padding: const EdgeInsets.only(left: 25.0,top: 15.0,bottom: 10.0,right: 25.0),
-              child:  new Text("Sign ",
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      fontStyle: FontStyle.normal,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+              child:  new GestureDetector(
+                child: new Text("Sign In",
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        fontStyle: FontStyle.normal,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold)),
+              ),
             )
           ],
         ));
+
     Container editextEmail = Container(
-        padding: const EdgeInsets.only(left: 25.0,top: 15.0,bottom: 10.0,right: 25.0),
+        padding: const EdgeInsets.only(left: 25.0,top: 15.0,right: 25.0),
         child: new TextField(
             decoration: InputDecoration(
                 border: UnderlineInputBorder(), labelText: "Email")));
     Container editextPassword = Container(
-        padding: const EdgeInsets.only(left: 25.0,top: 15.0,bottom: 10.0,right: 25.0),
+        padding: const EdgeInsets.only(left: 25.0,top: 15.0,right: 25.0,bottom: 10.0),
         child: new TextField(
             obscureText: true,
             decoration: InputDecoration(
@@ -82,8 +89,10 @@ class SignIn extends State<SignInStateFull> {
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
                       onTap: () {
-                        Navigator.of(context).push(new MaterialPageRoute(builder:
-                            (BuildContext context) => new HotelHomePage()));
+//                        Navigator.of(context).push(new MaterialPageRoute(builder:
+//                            (BuildContext context) => new NavigationHomeScreen()));
+//                        Auth().signIn("quangthu1162@gmail.com", "Topica@123");
+                        signIn();
                       }
                   ),
                 )
@@ -164,5 +173,13 @@ class SignIn extends State<SignInStateFull> {
           ),
       ),
     );
+  }
+  void signIn() async {
+      try{
+        FirebaseUser user = (await FirebaseAuth.instance.signInWithEmailAndPassword(email: "quangthu1162@gmail.com", password: "Topica@123")) as FirebaseUser;
+        print("User : $user");
+      }catch(e){
+        print("Error : ${e.message}");
+      }
   }
 }
