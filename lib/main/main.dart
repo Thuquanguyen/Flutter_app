@@ -4,11 +4,14 @@ import 'package:app_manage/Controller/MainAppStateFull.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:location/location.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class Main extends State<MainStateFull> {
   String _mapStyle;
   bool _checkShow = false;
   MapType _mapType = MapType.hybrid;
+  final databaseReference = FirebaseDatabase.instance.reference();
+
   @override
   void initState() {
     super.initState();
@@ -16,6 +19,31 @@ class Main extends State<MainStateFull> {
 //      _mapStyle = string;
 //      _checkShow = false;
 //    });
+  }
+
+  List<Marker> listMarker = [];
+
+  functionGetData() {
+    DatabaseReference db =
+        FirebaseDatabase.instance.reference().child("location");
+    db.once().then((DataSnapshot snapshot) {
+      Map<dynamic, dynamic> values = snapshot.value;
+      values.forEach((key, values) {
+        print(values);
+        listMarker.add(Marker(
+            markerId: MarkerId("${values["id"]}"),
+            position: LatLng(values["lat"], values["log"]),
+            infoWindow:
+                InfoWindow(title: values["name"], snippet: values["address"]),
+            onTap: () {
+              widget.func();
+              setState(() {
+                _checkShow = false;
+                _markers.addAll(listMarker);
+              });
+            }));
+      });
+    });
   }
 
   final Location location = new Location();
@@ -32,21 +60,6 @@ class Main extends State<MainStateFull> {
       mapController = controller;
       controller.animateCamera(
           CameraUpdate.newLatLngZoom(LatLng(21.031172, 105.783889), 11.0));
-      setState(() {
-        _markers.add(
-          Marker(
-              markerId: MarkerId('vietnam'),
-              position: LatLng(21.031172, 105.783889),
-              infoWindow:
-                  InfoWindow(title: 'Ha Noi', snippet: 'Welcome to Ha Noi'),
-              onTap: () {
-                widget.func();
-                setState(() {
-                  _checkShow = false;
-                });
-              }),
-        );
-      });
     }
 
     // ignore: missing_return
@@ -128,7 +141,7 @@ class Main extends State<MainStateFull> {
               child: new GestureDetector(
                 child: new Icon(Icons.directions, color: Colors.white),
                 onTap: () {
-                  widget.func();
+                  functionGetData();
                 },
               ),
             ),

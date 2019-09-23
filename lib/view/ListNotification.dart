@@ -139,7 +139,7 @@ class _SchoolListState extends State<ListNotification> {
     return GestureDetector(
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(3),
           color: index % 2 == 0?Colors.cyanAccent:Colors.white,
         ),
         width: double.infinity,
@@ -156,7 +156,7 @@ class _SchoolListState extends State<ListNotification> {
                 margin: EdgeInsets.only(right: 15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  border: Border.all(width: 3, color: secondary),
+                  border: Border.all(width: 0, color: secondary),
                   image: DecorationImage(
                       image: NetworkImage(schoolLists[index]['logoText']),
                       fit: BoxFit.fill),

@@ -2,8 +2,6 @@
 #include "GeneratedPluginRegistrant.h"
 #import "GoogleMaps/GoogleMaps.h"
 @import UIKit;
-@import Firebase;
-
 @implementation AppDelegate
 
 
@@ -12,7 +10,6 @@
   [GeneratedPluginRegistrant registerWithRegistry:self];
   // Add the following line, with your API key
   [GMSServices provideAPIKey: @"AIzaSyDkPdMfaC0rD2D1U_d6foq7KB7CQskYXY4"];
-  [FIRApp configure];
    [GeneratedPluginRegistrant registerWithRegistry:self];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "405410433170",
-    "firebase_url": "https://app-manage-b4fc2.firebaseio.com",
-    "project_id": "app-manage-b4fc2",
-    "storage_bucket": "app-manage-b4fc2.appspot.com"
+    "project_number": "187233712660",
+    "firebase_url": "https://my-app-c1641.firebaseio.com",
+    "project_id": "my-app-c1641",
+    "storage_bucket": "my-app-c1641.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:405410433170:android:f55895bd4ee62d21c23e4b",
+        "mobilesdk_app_id": "1:187233712660:android:b1c6f5346e57339aaf0501",
         "android_client_info": {
           "package_name": "com.manager.app_manage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "405410433170-83ltckc66hdnaiim6f9fmbfsagsiuvp1.apps.googleusercontent.com",
+          "client_id": "187233712660-gkjbdo55qdjt28m5a6k91rn7ddb2e7ln.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.manager.app_manage",
@@ -23,28 +23,21 @@
           }
         },
         {
-          "client_id": "405410433170-gs6rh0b2mls72hkkmgufld4icfetq5m0.apps.googleusercontent.com",
+          "client_id": "187233712660-359fp34uvudmjnr4f6fikdfeqig5ravr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD4VUwxEgmF6s4uSYFM8P81UVGLuBTjZD4"
+          "current_key": "AIzaSyDNCZVkaECPEZ24vgpFAimJJ5kNAaPGT3Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "405410433170-gs6rh0b2mls72hkkmgufld4icfetq5m0.apps.googleusercontent.com",
+              "client_id": "187233712660-359fp34uvudmjnr4f6fikdfeqig5ravr.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "405410433170-p5ek3v9a8o5uni02rkiuanlucmcbrdo1.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.manager.appManage"
-              }
             }
           ]
         }
