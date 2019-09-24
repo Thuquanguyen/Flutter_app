@@ -79,7 +79,7 @@ class SignIn extends State<SignInStateFull> {
     try {
       GoogleSignInAccount result = await _googleSignIn.signIn();
       if (result != null) {
-        Navigator.of(context).push(new MaterialPageRoute(
+        Navigator.pushReplacement(context, MaterialPageRoute(
             builder: (BuildContext context) => new MainViewScreen()));
       }
     } catch (error) {
@@ -249,13 +249,13 @@ class SignIn extends State<SignInStateFull> {
           if (_checkSignIn) {
             print("Email, $_email");
             print("Pass, $_password");
-            _auth.signIn(_email.text, _password.text).then((value) => value !=
-                    null
-                ? Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => MainViewScreen()))
-                : setState(() {
-                    _checkIncorrect = true;
-                  }));
+            _auth.signIn(_email.text, _password.text).then((value) =>
+                value != null
+                    ? Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => MainViewScreen()))
+                    : setState(() {
+                        _checkIncorrect = true;
+                      }));
           }
         },
       ),

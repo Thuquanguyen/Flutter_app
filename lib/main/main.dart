@@ -9,7 +9,7 @@ import 'package:firebase_database/firebase_database.dart';
 class Main extends State<MainStateFull> {
   String _mapStyle;
   bool _checkShow = false;
-  MapType _mapType = MapType.hybrid;
+  MapType _mapType = MapType.normal;
   final databaseReference = FirebaseDatabase.instance.reference();
 
   @override

@@ -4,6 +4,7 @@ import 'package:app_manage/customDrawer/homeDrawer.dart';
 import 'package:app_manage/feedbackScreen.dart';
 import 'package:app_manage/helpScreen.dart';
 import 'package:app_manage/inviteFriendScreen.dart';
+import 'package:app_manage/view/MainApp.dart';
 import 'package:flutter/material.dart';
 
 import 'designCourse/homeDesignCourse.dart';
@@ -23,7 +24,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   @override
   void initState() {
     drawerIndex = DrawerIndex.HOME;
-    screenView = HotelHomeScreen();
+    screenView = MainApp();
     super.initState();
   }
 
@@ -57,19 +58,19 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       drawerIndex = drawerIndexdata;
       if (drawerIndex == DrawerIndex.HOME) {
         setState(() {
-          screenView = HotelHomeScreen();
+          screenView = MainApp();
         });
       } else if (drawerIndex == DrawerIndex.DIARY) {
         setState(() {
-          screenView = FitnessAppHomeScreen();
+          screenView = HotelHomeScreen();
         });
       } else if (drawerIndex == DrawerIndex.Course) {
         setState(() {
-          screenView = DesignCourseHomeScreen();
+          screenView = FitnessAppHomeScreen();
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {
-          screenView = HelpScreen();
+          screenView = DesignCourseHomeScreen();
         });
       } else if (drawerIndex == DrawerIndex.FeedBack) {
         setState(() {
