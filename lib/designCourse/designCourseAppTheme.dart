@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AppTheme {
-  AppTheme._();
+class DesignCourseAppTheme {
+  DesignCourseAppTheme._();
 
   static const Color notWhite = Color(0xFFEDF0F2);
-  static const Color nearlyWhite = Color(0xFFFEFEFE);
-  static const Color white = Color(0xFFFFFFFF);
+  static const Color nearlyWhite = Color(0xFFFFFFFF);
+  static const Color nearlyBlue = Color(0xFF00B6F0);
   static const Color nearlyBlack = Color(0xFF213333);
   static const Color grey = Color(0xFF3A5160);
   static const Color dark_grey = Color(0xFF313A44);
@@ -17,7 +17,6 @@ class AppTheme {
   static const Color dismissibleBackground = Color(0xFF364A54);
   static const Color chipBackground = Color(0xFFEEF1F3);
   static const Color spacer = Color(0xFFF2F2F2);
-  static const String fontName = 'WorkSans';
 
   static const TextTheme textTheme = TextTheme(
     display1: display1,
@@ -30,7 +29,7 @@ class AppTheme {
   );
 
   static const TextStyle display1 = TextStyle( // h4 -> display1
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.bold,
     fontSize: 36,
     letterSpacing: 0.4,
@@ -39,7 +38,7 @@ class AppTheme {
   );
 
   static const TextStyle headline = TextStyle( // h5 -> headline
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.bold,
     fontSize: 24,
     letterSpacing: 0.27,
@@ -47,7 +46,7 @@ class AppTheme {
   );
 
   static const TextStyle title = TextStyle( // h6 -> title
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.bold,
     fontSize: 16,
     letterSpacing: 0.18,
@@ -55,7 +54,7 @@ class AppTheme {
   );
 
   static const TextStyle subtitle = TextStyle( // subtitle2 -> subtitle
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.w400,
     fontSize: 14,
     letterSpacing: -0.04,
@@ -63,7 +62,7 @@ class AppTheme {
   );
 
   static const TextStyle body2 = TextStyle( // body1 -> body2
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.w400,
     fontSize: 14,
     letterSpacing: 0.2,
@@ -71,7 +70,7 @@ class AppTheme {
   );
 
   static const TextStyle body1 = TextStyle( // body2 -> body1
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.w400,
     fontSize: 16,
     letterSpacing: -0.05,
@@ -79,7 +78,7 @@ class AppTheme {
   );
 
   static const TextStyle caption = TextStyle( // Caption -> caption
-    fontFamily: fontName,
+    fontFamily: 'WorkSans',
     fontWeight: FontWeight.w400,
     fontSize: 12,
     letterSpacing: 0.2,
