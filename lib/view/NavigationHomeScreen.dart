@@ -8,12 +8,12 @@ import 'package:app_manage/view/MainApp.dart';
 import 'package:app_manage/view/ListNotification.dart';
 import 'package:app_manage/view/HealthView.dart';
 
-class NavigationHomeScreen extends StatefulWidget {
+class NavigationHome extends StatefulWidget {
   @override
-  _NavigationHomeScreenState createState() => _NavigationHomeScreenState();
+  _NavigationHomeScreen createState() => _NavigationHomeScreen();
 }
 
-class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
+class _NavigationHomeScreen extends State<NavigationHome> {
   Widget screenView;
   DrawerIndex drawerIndex;
   AnimationController sliderAnimationController;

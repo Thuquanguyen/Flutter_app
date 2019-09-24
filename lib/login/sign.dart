@@ -1,3 +1,4 @@
+import 'package:app_manage/MainViewScreen.dart';
 import 'package:app_manage/view/MainApp.dart';
 import 'package:app_manage/view/NavigationHomeScreen.dart';
 import 'package:app_manage/view/SignUpApp.dart';
@@ -79,7 +80,7 @@ class SignIn extends State<SignInStateFull> {
       GoogleSignInAccount result = await _googleSignIn.signIn();
       if (result != null) {
         Navigator.of(context).push(new MaterialPageRoute(
-            builder: (BuildContext context) => new NavigationHomeScreen()));
+            builder: (BuildContext context) => new MainViewScreen()));
       }
     } catch (error) {
       print(error);
@@ -251,7 +252,7 @@ class SignIn extends State<SignInStateFull> {
             _auth.signIn(_email.text, _password.text).then((value) => value !=
                     null
                 ? Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => NavigationHomeScreen()))
+                    builder: (BuildContext context) => MainViewScreen()))
                 : setState(() {
                     _checkIncorrect = true;
                   }));

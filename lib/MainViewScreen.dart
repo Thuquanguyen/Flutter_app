@@ -1,25 +1,18 @@
 import 'dart:io';
-import 'package:app_manage/Controller/signinStateFull.dart';
 import 'package:app_manage/appTheme.dart';
+import 'package:app_manage/navigationHomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'navigationHomeScreen.dart';
 
-void main() {
-  SystemChrome.setPreferredOrientations(
-          [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
-      .then((_) => runApp(new MyApp()));
-  // runApp(new MyApp());
-}
 
-class MyApp extends StatelessWidget {
+class MainViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness:
-          Platform.isAndroid ? Brightness.dark : Brightness.light,
+      Platform.isAndroid ? Brightness.dark : Brightness.light,
       systemNavigationBarColor: Colors.white,
       systemNavigationBarDividerColor: Colors.grey,
       systemNavigationBarIconBrightness: Brightness.dark,
@@ -32,7 +25,7 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: SignInStateFull(),
+      home: NavigationHomeScreen(),
     );
   }
 }
