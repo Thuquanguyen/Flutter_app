@@ -4,7 +4,11 @@ import 'package:app_manage/customDrawer/homeDrawer.dart';
 import 'package:app_manage/feedbackScreen.dart';
 import 'package:app_manage/helpScreen.dart';
 import 'package:app_manage/inviteFriendScreen.dart';
+import 'package:app_manage/view/AboutUsView.dart';
+import 'package:app_manage/view/HealthView.dart';
+import 'package:app_manage/view/ListNotification.dart';
 import 'package:app_manage/view/MainApp.dart';
+import 'package:app_manage/view/SettingViews.dart';
 import 'package:flutter/material.dart';
 
 import 'designCourse/homeDesignCourse.dart';
@@ -74,14 +78,20 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.FeedBack) {
         setState(() {
-          screenView = FeedbackScreen();
+          screenView = ListNotification();
         });
       } else if (drawerIndex == DrawerIndex.Invite) {
         setState(() {
-          screenView = InviteFriend();
+          screenView = HealthOnePage();
         });
-      } else {
-        //do in your way......
+      } else if (drawerIndex == DrawerIndex.Share) {
+        setState(() {
+          screenView = SettingMain();
+        });
+      } else if (drawerIndex == DrawerIndex.About) {
+        setState(() {
+          screenView = AboutUs();
+        });
       }
     }
   }

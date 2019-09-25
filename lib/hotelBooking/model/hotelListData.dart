@@ -6,6 +6,7 @@ class HotelListData {
   double rating;
   int reviews;
   int perNight;
+  bool favorite;
 
   HotelListData({
     this.imagePath = '',
@@ -15,6 +16,7 @@ class HotelListData {
     this.reviews = 80,
     this.rating = 4.5,
     this.perNight = 180,
+    this.favorite = false,
   });
 
   static List<HotelListData> hotelList = [
@@ -26,6 +28,7 @@ class HotelListData {
       reviews: 80,
       rating: 4.4,
       perNight: 180,
+      favorite: false,
     ),
     HotelListData(
       imagePath: 'assets/hotel/hotel_2.png',
@@ -35,6 +38,7 @@ class HotelListData {
       reviews: 74,
       rating: 4.5,
       perNight: 200,
+      favorite: false,
     ),
     HotelListData(
       imagePath: 'assets/hotel/hotel_3.png',
@@ -44,6 +48,7 @@ class HotelListData {
       reviews: 62,
       rating: 4.0,
       perNight: 60,
+      favorite: true,
     ),
     HotelListData(
       imagePath: 'assets/hotel/hotel_4.png',
@@ -53,6 +58,7 @@ class HotelListData {
       reviews: 90,
       rating: 4.4,
       perNight: 170,
+      favorite: true,
     ),
     HotelListData(
       imagePath: 'assets/hotel/hotel_5.png',
@@ -62,6 +68,7 @@ class HotelListData {
       reviews: 240,
       rating: 4.5,
       perNight: 200,
+      favorite: false,
     ),
   ];
 }
