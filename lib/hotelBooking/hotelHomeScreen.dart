@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:app_manage/hotelBooking/calendarPopupView.dart';
 import 'package:app_manage/hotelBooking/hotelListView.dart';
 import 'package:app_manage/hotelBooking/model/hotelListData.dart';
+import 'package:app_manage/view/ProfileLocation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -104,15 +105,21 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                                           curve: Curves.fastOutSlowIn)));
                               animationController.forward();
                               return HotelListView(
-                                callback: () {
-                                 setState(() {
-                                   hotelList[index].favorite = !hotelList[index].favorite;
-                                 });
-                                },
-                                hotelData: hotelList[index],
-                                animation: animation,
-                                animationController: animationController,
-                              );
+                                  callback: () {
+                                    Navigator.of(context).push(
+                                        new MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                new ProfileLocationPage()));
+                                  },
+                                  hotelData: hotelList[index],
+                                  animation: animation,
+                                  animationController: animationController,
+                                  funcFavorite: () {
+                                    setState(() {
+                                      hotelList[index].favorite =
+                                          !hotelList[index].favorite;
+                                    });
+                                  });
                             },
                           ),
                         ),
