@@ -1,10 +1,10 @@
-import 'package:app_manage/fitnessApp/UIview/bodyMeasurement.dart';
-import 'package:app_manage/fitnessApp/UIview/glassView.dart';
-import 'package:app_manage/fitnessApp/UIview/mediterranesnDietView.dart';
-import 'package:app_manage/fitnessApp/UIview/titleView.dart';
-import 'package:app_manage/fitnessApp/fintnessAppTheme.dart';
-import 'package:app_manage/fitnessApp/myDiary/mealsListView.dart';
-import 'package:app_manage/fitnessApp/myDiary/waterView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/bodyMeasurement.dart';
+import 'package:app_manage/view/fitnessApp/UIview/glassView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/mediterranesnDietView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/titleView.dart';
+import 'package:app_manage/view/fitnessApp/fintnessAppTheme.dart';
+import 'package:app_manage/view/fitnessApp/myDiary/mealsListView.dart';
+import 'package:app_manage/view/fitnessApp/myDiary/waterView.dart';
 import 'package:flutter/material.dart';
 
 class MyDiaryScreen extends StatefulWidget {

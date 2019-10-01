@@ -1,13 +1,12 @@
 import 'dart:ui';
-import 'package:app_manage/hotelBooking/calendarPopupView.dart';
-import 'package:app_manage/hotelBooking/hotelListView.dart';
-import 'package:app_manage/hotelBooking/model/hotelListData.dart';
+import 'package:app_manage/view/hotelBooking/calendarPopupView.dart';
+import 'package:app_manage/view/hotelBooking/hotelListView.dart';
+import 'package:app_manage/view/hotelBooking/model/hotelListData.dart';
 import 'package:app_manage/view/ProfileLocation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'SliderCustomShape.dart';
 import 'filtersScreen.dart';
 import 'hotelAppTheme.dart';
 

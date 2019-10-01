@@ -1,6 +1,6 @@
 import 'package:app_manage/MainViewScreen.dart';
 import 'package:app_manage/view/MainApp.dart';
-import 'package:app_manage/view/NavigationHomeScreen.dart';
+//import 'package:app_manage/view/NavigationHomeScreen.dart';
 import 'package:app_manage/view/SignUpApp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

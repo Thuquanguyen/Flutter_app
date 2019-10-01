@@ -1,4 +1,4 @@
-import 'package:app_manage/fitnessApp/fintnessAppTheme.dart';
+import 'package:app_manage/view/fitnessApp/fintnessAppTheme.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:vector_math/vector_math.dart' as vector;

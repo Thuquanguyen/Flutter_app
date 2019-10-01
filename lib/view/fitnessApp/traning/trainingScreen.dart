@@ -1,7 +1,7 @@
-import 'package:app_manage/fitnessApp/UIview/areaListView.dart';
-import 'package:app_manage/fitnessApp/UIview/runningView.dart';
-import 'package:app_manage/fitnessApp/UIview/titleView.dart';
-import 'package:app_manage/fitnessApp/UIview/workoutView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/areaListView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/runningView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/titleView.dart';
+import 'package:app_manage/view/fitnessApp/UIview/workoutView.dart';
 import 'package:flutter/material.dart';
 
 import '../fintnessAppTheme.dart';

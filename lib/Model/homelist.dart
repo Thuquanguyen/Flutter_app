@@ -1,6 +1,6 @@
-import 'package:app_manage/designCourse/homeDesignCourse.dart';
-import 'package:app_manage/fitnessApp/fitnessAppHomeScreen.dart';
-import 'package:app_manage/hotelBooking/hotelHomeScreen.dart';
+import 'package:app_manage/view/designCourse/homeDesignCourse.dart';
+import 'package:app_manage/view/fitnessApp/fitnessAppHomeScreen.dart';
+import 'package:app_manage/view/hotelBooking/hotelHomeScreen.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeList {

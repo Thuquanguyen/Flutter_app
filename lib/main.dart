@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:app_manage/Controller/signinStateFull.dart';
 import 'package:app_manage/appTheme.dart';
+import 'package:app_manage/view/IntroVideos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'navigationHomeScreen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: SignInStateFull(),
+      home: IntroThreePage(),
     );
   }
 }

@@ -1,5 +1,5 @@
-import 'package:app_manage/fitnessApp/models/tabIconData.dart';
-import 'package:app_manage/fitnessApp/traning/trainingScreen.dart';
+import 'package:app_manage/view/fitnessApp/models/tabIconData.dart';
+import 'package:app_manage/view/fitnessApp/traning/trainingScreen.dart';
 import 'package:flutter/material.dart';
 import 'bottomNavigationView/bottomBarView.dart';
 import 'fintnessAppTheme.dart';

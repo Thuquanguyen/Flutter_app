@@ -1,9 +1,9 @@
 import 'package:app_manage/appTheme.dart';
 import 'package:app_manage/customDrawer/drawerUserController.dart';
 import 'package:app_manage/customDrawer/homeDrawer.dart';
-import 'package:app_manage/feedbackScreen.dart';
-import 'package:app_manage/helpScreen.dart';
-import 'package:app_manage/inviteFriendScreen.dart';
+import 'package:app_manage/view/feedbackScreen.dart';
+import 'package:app_manage/view/helpScreen.dart';
+import 'package:app_manage/view/inviteFriendScreen.dart';
 import 'package:app_manage/view/AboutUsView.dart';
 import 'package:app_manage/view/HealthView.dart';
 import 'package:app_manage/view/ListNotification.dart';
@@ -11,9 +11,9 @@ import 'package:app_manage/view/MainApp.dart';
 import 'package:app_manage/view/SettingViews.dart';
 import 'package:flutter/material.dart';
 
-import 'designCourse/homeDesignCourse.dart';
-import 'fitnessApp/fitnessAppHomeScreen.dart';
-import 'hotelBooking/hotelHomeScreen.dart';
+import 'view/designCourse/homeDesignCourse.dart';
+import 'view/fitnessApp/fitnessAppHomeScreen.dart';
+import 'view/hotelBooking/hotelHomeScreen.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
   @override

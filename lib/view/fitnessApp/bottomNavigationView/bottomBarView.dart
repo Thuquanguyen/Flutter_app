@@ -1,5 +1,5 @@
-import 'package:app_manage/fitnessApp/fintnessAppTheme.dart';
-import 'package:app_manage/fitnessApp/models/tabIconData.dart';
+import 'package:app_manage/view/fitnessApp/fintnessAppTheme.dart';
+import 'package:app_manage/view/fitnessApp/models/tabIconData.dart';
 import 'package:app_manage/main.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;

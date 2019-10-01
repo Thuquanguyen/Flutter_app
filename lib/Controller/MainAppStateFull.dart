@@ -1,4 +1,4 @@
-import 'package:app_manage/main/main.dart';
+import 'package:app_manage/view/main/homeMain.dart';
 import 'package:flutter/material.dart';
 
 class MainStateFull extends StatefulWidget {

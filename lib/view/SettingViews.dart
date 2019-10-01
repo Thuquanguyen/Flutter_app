@@ -1,5 +1,6 @@
-import 'package:app_manage/hotelBooking/SliderCustomShape.dart';
-import 'package:app_manage/hotelBooking/hotelAppTheme.dart';
+import 'package:app_manage/view/hotelBooking/SliderCustomShape.dart';
+import 'package:app_manage/view/hotelBooking/hotelAppTheme.dart';
+import 'package:app_manage/view/hotelBooking/model/popularFilterList.dart';
 import 'package:flutter/material.dart';
 
 final primary = Color(0xff696b9e);
@@ -32,6 +33,8 @@ class SettingViewStateFul extends StatefulWidget{
   }
 }
 class SettingViewState extends State<SettingViewStateFul>{
+  List<PopularFilterListData> popularFilterListData = PopularFilterListData.popularFList;
+  List<PopularFilterListData> accomodationListData = PopularFilterListData.accomodationList;
   RangeValues _values = RangeValues(100, 600);
   double distValue = 50.0;
   var _checkSwitch = false;
@@ -82,7 +85,7 @@ class SettingViewState extends State<SettingViewStateFul>{
             ),
           ),
           new Container(
-            margin: const EdgeInsets.only(top: 20.0,left: 20.0,right: 20.0,bottom: 20.0),
+            margin: const EdgeInsets.all(10.0),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -98,12 +101,12 @@ class SettingViewState extends State<SettingViewStateFul>{
                 border:  Border.all(color: Colors.white)
             ),
             child: new Container(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   priceBarFilter(),
-                  getAppBarUI(),
+                  popularFilter(),
                   new Row(
                     children: <Widget>[
                       Expanded(
@@ -309,56 +312,86 @@ class SettingViewState extends State<SettingViewStateFul>{
       ],
     );
   }
-  Widget getAppBarUI() {
-    return Container(
-      decoration: BoxDecoration(
-        color: HotelAppTheme.buildLightTheme().backgroundColor,
-        boxShadow: <BoxShadow>[
-          BoxShadow(color: Colors.grey.withOpacity(0.2), offset: Offset(0, 2), blurRadius: 4.0),
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 8, right: 8),
-        child: Row(
-          children: <Widget>[
-            Container(
-              alignment: Alignment.centerLeft,
-              width: AppBar().preferredSize.height + 40,
-              height: AppBar().preferredSize.height,
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(32.0),
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.close),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Center(
-                child: Text(
-                  "Filters",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 22,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              width: AppBar().preferredSize.height + 40,
-              height: AppBar().preferredSize.height,
-            )
-          ],
+  Widget popularFilter() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          child: Text(
+            "Popular filters",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: Colors.grey, fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16, fontWeight: FontWeight.normal),
+          ),
         ),
-      ),
+        Padding(
+          padding: const EdgeInsets.only(right: 16, left: 16),
+          child: Column(
+            children: getPList(),
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        )
+      ],
     );
+  }
+  List<Widget> getPList() {
+    List<Widget> noList = List<Widget>();
+    var cout = 0;
+    final columCount = 2;
+    for (var i = 0; i < popularFilterListData.length / columCount; i++) {
+      List<Widget> listUI = List<Widget>();
+      for (var i = 0; i < columCount; i++) {
+        try {
+          final date = popularFilterListData[cout];
+          listUI.add(Expanded(
+            child: Row(
+              children: <Widget>[
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                    onTap: () {
+                      setState(() {
+                        date.isSelected = !date.isSelected;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            date.isSelected ? Icons.check_box : Icons.check_box_outline_blank,
+                            color: date.isSelected ? HotelAppTheme.buildLightTheme().primaryColor : Colors.grey.withOpacity(0.6),
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text(
+                            date.titleTxt,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ));
+          cout += 1;
+        } catch (e) {
+          print(e);
+        }
+      }
+      noList.add(Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: listUI,
+      ));
+    }
+    return noList;
   }
 }

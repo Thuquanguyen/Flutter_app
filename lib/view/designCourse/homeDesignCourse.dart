@@ -1,6 +1,6 @@
-import 'package:app_manage/designCourse/categoryListView.dart';
-import 'package:app_manage/designCourse/courseInfoScreen.dart';
-import 'package:app_manage/designCourse/popularCourseListView.dart';
+import 'package:app_manage/view/designCourse/categoryListView.dart';
+import 'package:app_manage/view/designCourse/courseInfoScreen.dart';
+import 'package:app_manage/view/designCourse/popularCourseListView.dart';
 import 'package:app_manage/main.dart';
 import 'package:flutter/material.dart';
 import 'designCourseAppTheme.dart';

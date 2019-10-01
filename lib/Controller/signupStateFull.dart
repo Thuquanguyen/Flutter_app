@@ -1,4 +1,4 @@
-import 'package:app_manage/login/signup.dart';
+import 'package:app_manage/view/login/signup.dart';
 import 'package:flutter/material.dart';
 
 class SignUpStateFull extends StatefulWidget {
