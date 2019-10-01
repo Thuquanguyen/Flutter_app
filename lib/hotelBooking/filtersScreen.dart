@@ -4,6 +4,16 @@ import 'SliderCustomShape.dart';
 import 'hotelAppTheme.dart';
 import 'model/popularFilterList.dart';
 
+class FittersScreenStateles extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new MaterialApp(
+      home: FiltersScreen(),
+    );
+  }
+}
 class FiltersScreen extends StatefulWidget {
   @override
   _FiltersScreenState createState() => _FiltersScreenState();

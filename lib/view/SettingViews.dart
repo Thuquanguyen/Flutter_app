@@ -1,3 +1,5 @@
+import 'package:app_manage/hotelBooking/SliderCustomShape.dart';
+import 'package:app_manage/hotelBooking/hotelAppTheme.dart';
 import 'package:flutter/material.dart';
 
 final primary = Color(0xff696b9e);
@@ -30,7 +32,9 @@ class SettingViewStateFul extends StatefulWidget{
   }
 }
 class SettingViewState extends State<SettingViewStateFul>{
-var _checkSwitch = false;
+  RangeValues _values = RangeValues(100, 600);
+  double distValue = 50.0;
+  var _checkSwitch = false;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -98,21 +102,8 @@ var _checkSwitch = false;
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  new Text("Option", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0)),
-                  new Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: new Text("Notifications",style: TextStyle(color: Colors.grey),),
-                      ),
-                      new Switch(value: _checkSwitch, onChanged: (bool value){
-                        setState(() {
-                          this._checkSwitch = value;
-                        });
-                      },
-                        activeColor: Colors.red,
-                        inactiveThumbColor: Colors.blueGrey,)
-                    ],
-                  ),
+                  priceBarFilter(),
+                  getAppBarUI(),
                   new Row(
                     children: <Widget>[
                       Expanded(
@@ -236,6 +227,137 @@ var _checkSwitch = false;
             ),
           )
         ],
+      ),
+    );
+  }
+  Widget priceBarFilter() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            "Price (for 1 night)",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: Colors.grey, fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16, fontWeight: FontWeight.normal),
+          ),
+        ),
+        Stack(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: _values.start.round(),
+                  child: SizedBox(),
+                ),
+                Container(
+                  width: 54,
+                  child: Text(
+                    "\$${_values.start.round()}",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Expanded(
+                  flex: 1000 - _values.start.round(),
+                  child: SizedBox(),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: _values.end.round(),
+                  child: SizedBox(),
+                ),
+                Container(
+                  width: 54,
+                  child: Text(
+                    "\$${_values.end.round()}",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Expanded(
+                  flex: 1000 - _values.end.round(),
+                  child: SizedBox(),
+                ),
+              ],
+            ),
+          ],
+        ),
+        SliderTheme(
+          data: SliderThemeData(
+            rangeThumbShape: CustomRangeThumbShape(),
+          ),
+          child: RangeSlider(
+            values: _values,
+            min: 0.0,
+            max: 1000.0,
+            activeColor: HotelAppTheme.buildLightTheme().primaryColor,
+            inactiveColor: Colors.grey.withOpacity(0.4),
+            divisions: 1000,
+            onChanged: (RangeValues values) {
+              setState(() {
+                _values = values;
+              });
+            },
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        )
+      ],
+    );
+  }
+  Widget getAppBarUI() {
+    return Container(
+      decoration: BoxDecoration(
+        color: HotelAppTheme.buildLightTheme().backgroundColor,
+        boxShadow: <BoxShadow>[
+          BoxShadow(color: Colors.grey.withOpacity(0.2), offset: Offset(0, 2), blurRadius: 4.0),
+        ],
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 8, right: 8),
+        child: Row(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.centerLeft,
+              width: AppBar().preferredSize.height + 40,
+              height: AppBar().preferredSize.height,
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32.0),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(Icons.close),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  "Filters",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 22,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: AppBar().preferredSize.height + 40,
+              height: AppBar().preferredSize.height,
+            )
+          ],
+        ),
       ),
     );
   }
